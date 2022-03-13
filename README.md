@@ -104,7 +104,7 @@ easy_response.post_processing(image_dir=image_dir, remove_duplicates=True)
 ## Limitations
 This scripts download the images with size approximately 200 x 200. This is because Google allows to download the images with rendered size only. Only few images can be downloaded with original image size. The original urls of the image are encrypted and with the encryption, image size is changed to a particular size which is lesser than the original image size.
 
-Please share your ideas to overcome these limitations. Let's together build a beautiful python scrip that can help lots of people.
+Please share your ideas to overcome these limitations. Let's together build a beautiful python script that can help lots of people.
 
 ## Next Steps
 Following the next steps to improve the script:
