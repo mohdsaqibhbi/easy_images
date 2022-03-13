@@ -16,6 +16,14 @@ setup_args = dict(
     keywords=['python image download', 'google images', 'download images', 'image downloader'],
     url='https://github.com/mohdsaqibhbi/easy_images.git',
     download_url='https://pypi.org/project/easy_images/'
+    classifiers=[
+        "Development Status :: Release",
+        "Intended Audience :: Developers, Machine Learning Engineers, Computer Vision",
+        "Programming Language :: Python :: 3",
+        "Operating System :: Unix",
+        "Operating System :: MacOS :: MacOS X",
+        "Operating System :: Microsoft :: Windows",
+    ]
 )
 
 install_requires = ['requests', 'opencv-python','python-magic','beautifulsoup4', 'selenium', 'tqdm']
