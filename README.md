@@ -29,7 +29,7 @@ Require Python >= 3.8
 - To download images from Google.
 
 ```
-from easy_images import EasyImages
+from easy_images.easy_images import EasyImages
 
 keywords = "dogs, cats, horse"
 
@@ -40,7 +40,7 @@ easy_response.download(keywords=keywords, max_limit=100)
 - Post processing on all the images in a directory, e.g removing duplicates images.
 
 ```
-from easy_images import EasyImages
+from easy_images.easy_images import EasyImages
 
 image_dir = "easy_images/dogs"
 
@@ -52,9 +52,7 @@ easy_response.post_processing(image_dir=image_dir, remove_duplicates=True)
 
 - **Class initialization**
 
-    ```
-    easy_response = EasyImages(browser_name="chrome", loading_timeout=2)
-    ```
+    ```easy_response = EasyImages(browser_name="chrome", loading_timeout=2)```
 
     - ***browser_name*** : *(str), {"chrome", "brave"}, default="chrome"*
 
@@ -65,9 +63,7 @@ easy_response.post_processing(image_dir=image_dir, remove_duplicates=True)
 
 - **Download images**
 
-    ```
-    easy_response.download(keywords, output_dir="easy_images", max_limit=10, image_formats={".jpg", ".jpeg", ".png"}, quick=True, remove_duplicates=False)
-    ```
+    ```easy_response.download(keywords, output_dir="easy_images", max_limit=10, image_formats={".jpg", ".jpeg", ".png"}, remove_duplicates=False)```
 
     - ***keywords*** : *(str / dict), e.g. "dogs, cats" or {"dogs": 100, "cats": 200}, default=Required*
 
@@ -80,19 +76,14 @@ easy_response.post_processing(image_dir=image_dir, remove_duplicates=True)
         Maximum number of images to download.
     - ***image_formats*** : *(set), default={".jpg", ".jpeg", ".png"}*
 
-        Supported image formats. Gifs can also be downloaded by providing {".gif"}.
-    - ***quick*** : *(boolean), default=True*
-
-        To download fast but slighty low resolution images. Set quick=False for slighty high resolution images. When quick=False, the average downloading time for         100 images is approximately 6 mins.
+        To download fast but slighty low resolution images. Set quick=False for slighty high resolution images. When quick=False, the average downloading time for 100 images is approximately 6 mins.
     - ***remove_duplicates*** : *(boolean), default=False*
 
         Whether to remove duplicate images or not while downloading. Set remove_duplicates=True to remove duplicates.
 
 - **Post processing on images**
 
-    ```
-    easy_response.post_processing(image_dir, remove_duplicates=False, resize=None, grayscale=False, avg_image_size=False)
-    ```
+    ```easy_response.post_processing(image_dir, remove_duplicates=False, resize=None, grayscale=False, avg_image_size=False)```
 
     - ***image_dir*** : *(str), e.g. "easy_images/dogs", default=Required*
 

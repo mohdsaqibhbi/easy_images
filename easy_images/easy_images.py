@@ -228,35 +228,26 @@ class EasyImages:
         time.sleep(self.PAGE_LOADING_TIMEOUT)
         image_url_list = set()
 
-        if self.quick:
-            # METHOD 1 (Give slightly worse images)
-            soup = bs4.BeautifulSoup(self.browser.page_source, features="html.parser")
-            image_elements = soup.find_all('img')
-            for image_element in tqdm(image_elements, desc = "[INFO] Getting URLs for keyword '{}'".format(keyword), leave=False, colour="green"):
-                if image_element.has_attr('src') and "thumbnail" not in image_element['src']:
-                    image_url_list.add(image_element['src'])
-        else:
-            # METHOD 2 (Give slightly better images)
-            image_elements = self.browser.find_elements(By.CLASS_NAME, 'rg_i.Q4LuWd')
+        image_elements = self.browser.find_elements(By.CLASS_NAME, 'rg_i.Q4LuWd')
 
-            for image_element in tqdm(image_elements, desc = "[INFO] Getting URLs for keyword '{}'".format(keyword), leave=False, colour="green"):
+        for image_element in tqdm(image_elements, desc = "[INFO] Getting URLs for keyword '{}'".format(keyword), leave=False, colour="green"):
 
-                try:
-                    image_element.click()
-                    time.sleep(self.PAGE_SCROLLING_TIMEOUT)
-                    soup = bs4.BeautifulSoup(self.browser.page_source, features="html.parser")
+            try:
+                image_element.click()
+                time.sleep(self.PAGE_SCROLLING_TIMEOUT)
+                soup = bs4.BeautifulSoup(self.browser.page_source, features="html.parser")
 
-                    for image_element in soup.find_all('img', class_='n3VNCb'):
-                        if image_element.has_attr('src'):
-                            if "data:image" not in image_element['src']:
-                                image_url_list.add(image_element['src'])
+                for image_element in soup.find_all('img', class_='n3VNCb'):
+                    if image_element.has_attr('src'):
+                        if "data:image" not in image_element['src']:
+                            image_url_list.add(image_element['src'])
 
-                except Exception as e:
-                    self.logger.error("[ERROR] {}".format(e))
+            except Exception as e:
+                self.logger.error("[ERROR] {}".format(e))
 
         return list(image_url_list)
 
-    def download(self, keywords, output_dir='easy_images', max_limit=10, image_formats={'.jpg', '.jpeg', '.png'}, quick=True, remove_duplicates=False):
+    def download(self, keywords, output_dir='easy_images_dir', max_limit=10, image_formats={'.jpg', '.jpeg', '.png'}, remove_duplicates=False):
 
         '''
         Download the images for the given keyword(s) as per given a number of helpful variables like
@@ -268,7 +259,6 @@ class EasyImages:
             - output_dir (srt): Path of the main output directory
             - max_limit (int): Maximum number of images needed
             - image_formats (set): Supported image formats
-            - quick (boolean): To download fast but slighty low resolution images. Set quick=False for slighty high resolution images
             - remove_duplicates (boolean): Whether to remove duplicate images or not while downloading. Set remove_duplicates=True to remove duplicates.
 
         Returns:
@@ -280,7 +270,6 @@ class EasyImages:
 
         self.output_dir = output_dir
         self.image_formats = image_formats
-        self.quick = quick
         self.summary_dict = {}
 
         # Make the keyword dict e.g {"dog": 10, "cat": 10} from "dog, cat"

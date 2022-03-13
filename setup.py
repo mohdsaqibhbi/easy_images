@@ -15,10 +15,10 @@ setup_args = dict(
     author_email='mohdsaqibhbi@gmail.com',
     keywords=['python image download', 'google images', 'download images', 'image downloader'],
     url='https://github.com/mohdsaqibhbi/easy_images.git',
-    download_url='https://pypi.org/project/easy_images_downloader/',
+    download_url='https://pypi.org/project/easy_images_downloader/'
 )
 
-install_requires = ['requests', 'opencv-python','python-magic','beautifulsoup4', 'selenium', 'tqdm']
+install_requires = ['requests', 'opencv-python','python-magic','beautifulsoup4', 'selenium', 'tqdm', 'webdriver-manager', 'tabulate']
 
 if __name__ == '__main__':
     setup(**setup_args, install_requires=install_requires)
