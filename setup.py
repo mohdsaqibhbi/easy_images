@@ -15,7 +15,7 @@ setup_args = dict(
     author_email='mohdsaqibhbi@gmail.com',
     keywords=['python image download', 'google images', 'download images', 'image downloader'],
     url='https://github.com/mohdsaqibhbi/easy_images.git',
-    download_url='https://pypi.org/project/easy_images/'
+    download_url='https://pypi.org/project/easy_images/',
     classifiers=[
         "Development Status :: Release",
         "Intended Audience :: Developers, Machine Learning Engineers, Computer Vision",
