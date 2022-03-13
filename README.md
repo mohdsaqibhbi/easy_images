@@ -52,7 +52,9 @@ easy_response.post_processing(image_dir=image_dir, remove_duplicates=True)
 
 - **Class initialization**
 
-    ```easy_response = EasyImages(browser_name="chrome", loading_timeout=2)```
+    ```
+    easy_response = EasyImages(browser_name="chrome", loading_timeout=2)
+    ```
 
     - ***browser_name*** : *(str), {"chrome", "brave"}, default="chrome"*
 
@@ -63,7 +65,9 @@ easy_response.post_processing(image_dir=image_dir, remove_duplicates=True)
 
 - **Download images**
 
-    ```easy_response.download(keywords, output_dir="easy_images", max_limit=10, image_formats={".jpg", ".jpeg", ".png"}, quick=True, remove_duplicates=False)```
+    ```
+    easy_response.download(keywords, output_dir="easy_images", max_limit=10, image_formats={".jpg", ".jpeg", ".png"}, quick=True, remove_duplicates=False)
+    ```
 
     - ***keywords*** : *(str / dict), e.g. "dogs, cats" or {"dogs": 100, "cats": 200}, default=Required*
 
@@ -79,14 +83,16 @@ easy_response.post_processing(image_dir=image_dir, remove_duplicates=True)
         Supported image formats. Gifs can also be downloaded by providing {".gif"}.
     - ***quick*** : *(boolean), default=True*
 
-        To download fast but slighty low resolution images. Set quick=False for slighty high resolution images. When quick=False, the average downloading time for 100 images is approximately 6 mins.
+        To download fast but slighty low resolution images. Set quick=False for slighty high resolution images. When quick=False, the average downloading time for         100 images is approximately 6 mins.
     - ***remove_duplicates*** : *(boolean), default=False*
 
         Whether to remove duplicate images or not while downloading. Set remove_duplicates=True to remove duplicates.
 
 - **Post processing on images**
 
-    ```easy_response.post_processing(image_dir, remove_duplicates=False, resize=None, grayscale=False, avg_image_size=False)```
+    ```
+    easy_response.post_processing(image_dir, remove_duplicates=False, resize=None, grayscale=False, avg_image_size=False)
+    ```
 
     - ***image_dir*** : *(str), e.g. "easy_images/dogs", default=Required*
 
@@ -117,7 +123,7 @@ Following the next steps to improve the script:
 - Optimize the overall script with additional functionalities for faster downloading of images.
 - Add some more generic OpenCV functionalities. Please share you ideas if you got some.
 
-**Also, everyone is welcome to contribute to this script. If you want to contribute please write me on [Linkedin](https://www.linkedin.com/in/mohdsaqibhbi) or [Email](mohdsaqibhbi@gmail.com) me.**
+**Everyone is welcome to contribute to this script. If you want to contribute please write me on [Linkedin](https://www.linkedin.com/in/mohdsaqibhbi) or [Email](mohdsaqibhbi@gmail.com) me.**
 
 ## Disclaimer
 This Python script allows you to download hundreds of Google images. Please do not download or use any image whose copyright has been violated. Google indexes images and makes them searchable. It does not create its own images, and as a result, none of them are protected by copyright. The original creator of the image owns the copyrights.
