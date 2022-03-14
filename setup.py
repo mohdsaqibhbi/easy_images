@@ -6,7 +6,7 @@ with open('README.md', encoding='utf-8') as readme_file:
 
 setup_args = dict(
     name='easy_images_downloader',
-    version='0.0.6',
+    version='0.0.6.2',
     description='Download hundreds of images from Google. Do image post processing later.',
     long_description=README,
 	long_description_content_type='text/markdown',
@@ -19,7 +19,7 @@ setup_args = dict(
     download_url='https://pypi.org/project/easy_images_downloader/'
 )
 install_requires = ["requests", "opencv-python", "beautifulsoup4", "selenium",
-                        "tqdm", "webdriver-manager", "tabulate", "python-magic",
+                        "tqdm", "webdriver-manager", "tabulate", "python-magic;platform_system=='Linux'",
                         "python-magic-bin;platform_system=='Windows'"]
 
 if __name__ == '__main__':

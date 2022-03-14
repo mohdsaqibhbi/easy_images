@@ -1,0 +1,11 @@
+requests
+opencv-python
+beautifulsoup4
+selenium
+tqdm
+webdriver-manager
+tabulate
+python-magic
+
+[:platform_system == "Windows"]
+python-magic-bin
