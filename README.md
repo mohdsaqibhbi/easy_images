@@ -22,8 +22,15 @@ With this Python script, you can easily download hundreds of images from Google 
 Require Python >= 3.8
 
 ### Installation
+
+#### Using Github repo
 1. Clone the [repo](https://github.com/mohdsaqibhbi/easy_images) using `git clone https://github.com/mohdsaqibhbi/easy_images.git`.
-2. Install the dependencies by running `pip3 install requirements.txt`.
+2. Install the dependencies by running `pip3 install -r requirements.txt`.
+
+#### Using pip
+`pip3 install easy-images-downloader`
+
+**Note: Will not work in Colab.**
 
 ### Usage
 - To download images from Google.
