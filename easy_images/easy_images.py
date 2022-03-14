@@ -22,7 +22,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 class EasyImages:
 
-    def __init__(self, browser_name='chrome', loading_timeout=2):
+    def __init__(self, browser_name='chrome', headless=True, loading_timeout=2):
 
         '''
         Intialized all the necessary variables and constants while creating the class object.
@@ -30,6 +30,7 @@ class EasyImages:
         Parameters:
         -----------
             - browser_name (str): Browser name of the user
+            - headless (boolean): While downloading, whether to run browser or not. Set headless=False to open browser.
             - loading_timeout (float): Page loading timeout. Less for fast and more for slow internet.
 
         Returns:
@@ -48,6 +49,7 @@ class EasyImages:
         self.BROWSER_FILE_PATH = '/usr/bin/brave-browser'
         self.BROWSER_NAME = 'brave'
         self.browser_name = browser_name
+        self.headless = headless
         self.MAX_SCROLL_NUMBER = 160
         self.MIN_SCROLL_NUMBER = 0
         self.IMAGES_PER_SCROLL = 25
@@ -278,12 +280,14 @@ class EasyImages:
         else:
             keywords_dict = keywords
 
+        option = Options()
+        if self.headless: option.add_argument("--headless")
+
         if self.browser_name == self.BROWSER_NAME:
-            option = Options()
             option.binary_location = self.BROWSER_FILE_PATH
             self.browser = webdriver.Chrome(options = option, service = Service(ChromeDriverManager().install()))
         else:
-            self.browser = webdriver.Chrome(service = Service(ChromeDriverManager().install()))
+            self.browser = webdriver.Chrome(options = option, service = Service(ChromeDriverManager().install()))
 
         ##########################################################################################
         # Downloading section
