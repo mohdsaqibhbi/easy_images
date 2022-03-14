@@ -1,8 +1,0 @@
-beautifulsoup4
-opencv-python
-python-magic
-requests
-selenium
-tabulate
-tqdm
-webdriver-manager
