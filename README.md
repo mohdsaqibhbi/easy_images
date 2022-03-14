@@ -64,7 +64,7 @@ easy_response.post_processing(image_dir=image_dir, remove_duplicates=True)
         The browser to use.
     - ***headless*** : *(boolean), default=True*
 
-        While downloading, whether to run browser or not. Set headless=False to open browser.
+        While downloading, whether to open browser or not. Set headless=False to open browser.
     - ***loading_timeout*** : *(float), default=2*
 
         Page loading timeout. Less for fast and more for slow internet.
