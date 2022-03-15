@@ -71,12 +71,12 @@ easy_response.post_processing(image_dir=image_dir, remove_duplicates=True)
 
 - **Download images**
 
-    ```easy_response.download(keywords, output_dir="easy_images", max_limit=10, image_formats={".jpg", ".jpeg", ".png"}, remove_duplicates=False)```
+    ```easy_response.download(keywords, output_dir="easy_images_dir", max_limit=10, image_formats={".jpg", ".jpeg", ".png"}, remove_duplicates=False)```
 
     - ***keywords*** : *(str / dict), e.g. "dogs, cats" or {"dogs": 100, "cats": 200}, default=Required*
 
         Keywords for which images will be downloaded.
-    - ***output_dir*** : *(str), default="easy_images"*
+    - ***output_dir*** : *(str), default="easy_images_dir"*
 
         Output directory where images will be downloaded for each keyword.
     - ***max_limit*** : *(int), default=10*
@@ -84,7 +84,7 @@ easy_response.post_processing(image_dir=image_dir, remove_duplicates=True)
         Maximum number of images to download.
     - ***image_formats*** : *(set), default={".jpg", ".jpeg", ".png"}*
 
-        To download fast but slighty low resolution images. Set quick=False for slighty high resolution images. When quick=False, the average downloading time for 100 images is approximately 6 mins.
+        Supported image formats.
     - ***remove_duplicates*** : *(boolean), default=False*
 
         Whether to remove duplicate images or not while downloading. Set remove_duplicates=True to remove duplicates.
